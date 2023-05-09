@@ -1,4 +1,5 @@
 "use strict";
+// Prefer pascal case for naming classes
 var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -11,7 +12,8 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _EmployeeInformation_id;
-// Prefer pascal case for naming classes
+Object.defineProperty(exports, "__esModule", { value: true });
+// import * as UserLogin from './Interfaces';  UserLogin.Login and UserLogin.User
 class EmployeeInformation {
     constructor(id, name, address) {
         _EmployeeInformation_id.set(this, void 0);
@@ -33,6 +35,13 @@ class EmployeeInformation {
     }
     static getEmployeeCount() {
         return 50;
+    }
+    Login() {
+        return {
+            name: "John",
+            id: 3,
+            email: '2140103@sliet.ac.in'
+        };
     }
 }
 _EmployeeInformation_id = new WeakMap();

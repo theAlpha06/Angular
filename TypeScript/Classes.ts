@@ -1,11 +1,15 @@
 // Prefer pascal case for naming classes
-class EmployeeInformation {
+
+import { Login, User } from './Interfaces';
+// import * as UserLogin from './Interfaces';  UserLogin.Login and UserLogin.User
+
+class EmployeeInformation implements Login {
 
     #id: number;
     protected name: string;
     address: string; // '!' is just to remove error
 
-    constructor(id: number, name: string, address: string){
+    constructor(id: number, name: string, address: string) {
         this.address = address;
         this.#id = id;
         this.name = name;
@@ -21,12 +25,20 @@ class EmployeeInformation {
         this.#id = id;
     }
 
-    getNameWithAddress() : string {
+    getNameWithAddress(): string {
         return `${this.name} stays at ${this.address}`;
     }
 
-    static getEmployeeCount():number {
+    static getEmployeeCount(): number {
         return 50;
+    }
+
+    Login(): User {
+        return {
+            name: "John",
+            id: 3,
+            email: '2140103@sliet.ac.in'
+        }
     }
 }
 
@@ -49,7 +61,7 @@ console.log(shubh.empId);
 
 console.log(shubh);
 
-class Manager extends EmployeeInformation{
+class Manager extends EmployeeInformation {
     constructor(id: number, name: string, address: string) {
         super(id, name, address);
     }
