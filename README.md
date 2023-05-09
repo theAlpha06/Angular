@@ -106,3 +106,15 @@
     ```PowerShell
     ng serve --watch --aot --dev
     ```
+
+
+## <span style="color:yellow">Introduction to mono-repo</span>
+
+- A mono-repo is a single repository that contains multiple projects
+- Create and maintain multiple projects in a single repository
+- Share code between projects
+- Share dependencies between projects
+- Share configurations between projects
+- Share build scripts between projects
+- Share testing code between projects
+- Share documentation between projects
