@@ -23,3 +23,86 @@
 - Also supports SSR(Server Side Rendering)
 
     <span style="color:red">SPA does not make requests to server for every URL requests</span>
+
+
+### <span style="color:yellow">Creating Angular Workspace</span>
+
+- Angular Workspace is a collection of Angular projects and libraries
+- Workspace is created using Angular CLI
+- Angular CLI is a command line interface for Angular
+- It is used to create new projects, generate application and library code, perform testing, and more
+- It is installed using npm
+
+    ```PowerShell
+    npm install -g @angular/cli
+    ```
+- To create a new workspace
+
+    ```PowerShell
+    ng new <workspace-name>
+    ```
+- To create a new application
+
+    ```PowerShell
+    ng generate application <app-name>
+    ```
+- To create a new library
+
+    ```PowerShell
+    ng generate library <lib-name>
+    ```
+- To run the application
+
+    ```PowerShell
+    ng serve
+    ```
+- To run the application on a different port
+
+    ```PowerShell
+    ng serve --port <port-number>
+    ```
+- To run the application on a different host
+
+    ```PowerShell
+    ng serve --host <host-name>
+    ```
+- To run the application on a different port and host
+
+    ```PowerShell
+    ng serve --port <port-number> --host <host-name>
+    ```
+- To run the application in production mode
+
+    ```PowerShell
+    ng serve --prod
+    ```
+- To run the application in development mode
+
+    ```PowerShell
+    ng serve --dev
+    ```
+- To run the application in aot mode
+
+    ```PowerShell
+    ng serve --aot
+    ```
+- To run the application in watch mode
+
+    ```PowerShell
+    ng serve --watch
+    ```
+- To run the application in watch mode and aot mode
+
+    ```PowerShell
+    ng serve --watch --aot
+    ```
+- To run the application in watch mode and aot mode and in production mode
+
+    ```PowerShell
+    ng serve --watch --aot --prod
+    ```
+- To run the application in watch mode and aot mode and in development mode
+
+    ```PowerShell
+    ng serve --watch --aot --dev
+    ```
