@@ -77,4 +77,11 @@ export class RoomsComponent {
     // this.roomList.push(room);
     this.roomList = [...this.roomList, room];
   }
+
+  ngDoCheck() {
+    console.log('on changes is called')
+  }
 }
+
+//do not implement ngOnChanges and ngDoCheck on same component
+// try to avoid ngDoCheck as much as possible
