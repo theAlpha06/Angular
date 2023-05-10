@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Room, RoomList } from './rooms';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'hotelinventory-rooms',
@@ -20,10 +21,14 @@ export class RoomsComponent {
 
   roomList: RoomList[] = [];
 
+  // @ViewChild(HeaderComponent, {static: true}) headerComponent!: HeaderComponent;
+  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent; //recomended way
+
   selectedRoom!: RoomList;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.headerComponent)
     this.roomList = [
       {
         roomNumber: 101,
@@ -80,6 +85,10 @@ export class RoomsComponent {
 
   ngDoCheck() {
     console.log('on changes is called')
+  }
+
+  ngAfterViewInit() {
+    console.log(this.headerComponent)
   }
 }
 
