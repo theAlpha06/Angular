@@ -16,9 +16,10 @@ export class RoomsComponent {
     availableRooms: 10,
   }
   hideRooms = false;
-
+  
   roomList: RoomList[] = [];
-
+  
+  selectedRoom!: RoomList;
   constructor() { }
 
   ngOnInit(): void {
@@ -55,5 +56,9 @@ export class RoomsComponent {
 
   toggle() {
     this.hideRooms = !this.hideRooms;
+  }
+
+  selectRoom(room: RoomList) {
+    this.selectedRoom = room;
   }
 }
