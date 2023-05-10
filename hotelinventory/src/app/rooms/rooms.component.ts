@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { HeaderComponent } from '../header/header.component';
 
@@ -22,7 +22,9 @@ export class RoomsComponent {
   roomList: RoomList[] = [];
 
   // @ViewChild(HeaderComponent, {static: true}) headerComponent!: HeaderComponent;
-  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent; //recomended way
+  // @ViewChild(HeaderComponent) headerComponent!: HeaderComponent; //recomended way
+
+  @ViewChildren(HeaderComponent) headerChildrenComponent!: QueryList<HeaderComponent>;
 
   selectedRoom!: RoomList;
   constructor() { }
@@ -87,7 +89,10 @@ export class RoomsComponent {
   }
 
   ngAfterViewInit() {
-    this.headerComponent.title = 'Rooms View';
+    // this.headerComponent.title = 'Rooms View';
+    this.headerChildrenComponent.forEach((child) => {
+      child.title = 'Rooms';
+    })
   }
 }
 
