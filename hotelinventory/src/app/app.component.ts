@@ -18,10 +18,13 @@ export class AppComponent {
 
   role = 'Admin';
 
-  @ViewChild('user', { read: ViewContainerRef }) vcr!: ViewContainerRef;
 
-  ngAfterViewInit() {
-    const componentRef = this.vcr.createComponent(RoomsComponent);
-    componentRef.instance.numberOfRooms = 44;
-  }
+//Loading components dynamically ka function hai yeh which is defined at 'hotelinventory\src\app\app.component.html' line no 17
+
+  // @ViewChild('user', { read: ViewContainerRef }) vcr!: ViewContainerRef;
+
+  // ngAfterViewInit() {
+  //   const componentRef = this.vcr.createComponent(RoomsComponent);
+  //   componentRef.instance.numberOfRooms = 44;
+  // }
 }
