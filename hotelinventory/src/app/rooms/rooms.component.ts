@@ -28,7 +28,6 @@ export class RoomsComponent {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.headerComponent)
     this.roomList = [
       {
         roomNumber: 101,
@@ -88,7 +87,7 @@ export class RoomsComponent {
   }
 
   ngAfterViewInit() {
-    console.log(this.headerComponent)
+    this.headerComponent.title = 'Rooms View';
   }
 }
 
