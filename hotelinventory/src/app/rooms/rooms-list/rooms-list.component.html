@@ -1,4 +1,4 @@
-Rooms List:
+<h2>{{title}}</h2>
 <table [cellSpacing]="0" [cellPadding]="10" class="table">
   <tr>
     <th>Select Room</th>
@@ -15,7 +15,7 @@ Rooms List:
   <tr
     [ngClass]="e ? 'even' : 'odd'"
     *ngFor="
-      let room of rooms | slice : 0 : 3;
+      let room of rooms;
       let e = even;
       let o = odd;
       let i = index
@@ -23,11 +23,9 @@ Rooms List:
   >
     <!-- <td>{{ i | percent }}</td> -->
     <td>
-      <button
-        type="button"
-        class="btn btn-primary"
-        (click)="selectRoom(room)"
-      >Select Room</button>
+      <button type="button" class="btn btn-primary" (click)="selectRoom(room)">
+        Select Room
+      </button>
     </td>
     <td>{{ i }}</td>
     <td [ngClass]="{ even: e, odd: o }">{{ e ? "Even" : "Odd" }}</td>
