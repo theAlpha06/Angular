@@ -27,5 +27,9 @@ export class RoomsListComponent {
     this.selectedRoom.emit(room);
   }
 
+  ngOnDestroy() {
+    console.log('on destroy');
+  }
+
   constructor() { }
 }

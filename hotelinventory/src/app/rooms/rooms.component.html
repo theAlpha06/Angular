@@ -23,7 +23,8 @@
 </div>
 <div *ngIf="rooms?.availableRooms == 0">No Rooms Available</div>
 
-<div *ngIf="rooms?.availableRooms">
+<!-- <div *ngIf="rooms?.availableRooms"> -->
+<div *ngIf="hideRooms">
   <hotelinventory-rooms-list [rooms]="roomList" [title]="title"(selectedRoom)="selectRoom($event)"></hotelinventory-rooms-list>
 </div>
 

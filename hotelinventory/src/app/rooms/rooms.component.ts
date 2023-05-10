@@ -94,6 +94,7 @@ export class RoomsComponent {
       child.title = 'Rooms';
     })
   }
+
 }
 
 //do not implement ngOnChanges and ngDoCheck on same component
