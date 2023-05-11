@@ -1,14 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { RoomList } from '../rooms';
-
+import { APP_SERVICE_CONFIG } from '../../AppConfig/appconfig.service';
+import { AppConfig } from '../../AppConfig/appconfig.interface';
+//What if we need to use the environment variables in multiple files?
+//This is where the value providers comes into picture.
+// import { environment } from  '../../../environments/environment'
 @Injectable({
   providedIn: 'root'
 })
 export class RoomsService {
 
-  constructor() {
+  constructor(@Inject(APP_SERVICE_CONFIG) private config: AppConfig) {
     //we get a single instatnce of service
     console.log('room service inititalized');
+    console.log(config.apiEndpoint);
+    // console.log(environment.apiEndpoint)
   }
 
   roomList : RoomList[] = [
@@ -40,6 +46,8 @@ export class RoomsService {
       checkoutTime: new Date('2020-01-01T12:00:00'),
     }
   ];
+
+  //Value provides makes object as a service like using apis
 
   getRooms() {
     return this.roomList;

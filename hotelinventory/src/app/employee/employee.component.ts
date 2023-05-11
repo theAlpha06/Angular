@@ -13,6 +13,6 @@ export class EmployeeComponent {
   //we get a single instatnce of service
   //by using this self decorator we should get the same instance of service if not we should get error
   //this self makes sure that the dependency resolution checks the proivders in the same component if not found it directly goes to the NullInjectorError
-  constructor(@Self() private roomService: RoomsService){}
+  constructor(){}
   employee: string = 'Sunny';
 }

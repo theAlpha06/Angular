@@ -11,7 +11,7 @@ import { RoomsService } from '../rooms/services/rooms.service';
 export class ContainerComponent {
   //container components will use the instance of services only
   @ContentChild(EmployeeComponent) employee!: EmployeeComponent;
-  constructor(@Host() private roomsService: RoomsService) {
+  constructor() {
 
   }
   ngAfterContentInit(): void {

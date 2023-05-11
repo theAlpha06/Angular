@@ -6,7 +6,7 @@ import { RoomsService } from './services/rooms.service';
 @Component({
   selector: 'hotelinventory-rooms',
   templateUrl: './rooms.component.html',
-  styleUrls: ['./rooms.component.scss']
+  styleUrls: ['./rooms.component.scss'],
 })
 export class RoomsComponent {
 
