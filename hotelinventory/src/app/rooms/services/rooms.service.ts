@@ -8,7 +8,7 @@ export class RoomsService {
 
   constructor() {
     //we get a single instatnce of service
-    // console.log('room service inititalized');
+    console.log('room service inititalized');
   }
 
   roomList : RoomList[] = [
