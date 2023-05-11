@@ -1,5 +1,6 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, Inject } from '@angular/core';
 import { RoomsComponent } from './rooms/rooms.component';
+import { LocalStorageToken } from './localstorage.token';
 
 @Component({
   selector: 'hotelinventory-root',
@@ -27,4 +28,11 @@ export class AppComponent {
   //   const componentRef = this.vcr.createComponent(RoomsComponent);
   //   componentRef.instance.numberOfRooms = 44;
   // }
+
+  constructor(@Inject(LocalStorageToken) private localStorage: any) {
+    
+  }
+  ngOnInit() {
+    this.localStorage.setItem('name', 'Hilton Hotel')
+  }
 }
