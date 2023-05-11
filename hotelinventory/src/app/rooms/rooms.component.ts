@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, QueryList, SkipSelf, ViewChild, ViewChildren } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { HeaderComponent } from '../header/header.component';
 import { RoomsService } from './services/rooms.service';
@@ -32,7 +32,9 @@ export class RoomsComponent {
   //always make services private
   //this instance will not leak into the template or anywhere else but ts file
 
-  constructor(private roomsService: RoomsService) { }
+  //SkipSelf() will skip the current component and will look for the service in parent component although angular internally uses blurfilter to check where the services is used and it is pretty fast
+
+  constructor(@SkipSelf() private roomsService: RoomsService) { }
 
   ngOnInit(): void {
     this.roomList = this.roomsService.getRooms();
