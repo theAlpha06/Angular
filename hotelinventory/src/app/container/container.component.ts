@@ -9,6 +9,7 @@ import { RoomsService } from '../rooms/services/rooms.service';
   providers: [RoomsService]
 })
 export class ContainerComponent {
+  //container components will use the instance of services only
   @ContentChild(EmployeeComponent) employee!: EmployeeComponent;
   constructor(@Host() private roomsService: RoomsService) {
 
