@@ -6,7 +6,10 @@ import { RoomList } from '../rooms';
 })
 export class RoomsService {
 
-  constructor() { }
+  constructor() {
+    //we get a single instatnce of service
+    // console.log('room service inititalized');
+  }
 
   roomList : RoomList[] = [
     {
