@@ -2,6 +2,7 @@ import { Component, QueryList, SkipSelf, ViewChild, ViewChildren } from '@angula
 import { Room, RoomList } from './rooms';
 import { HeaderComponent } from '../header/header.component';
 import { RoomsService } from './services/rooms.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'hotelinventory-rooms',
@@ -23,6 +24,15 @@ export class RoomsComponent {
   roomList: RoomList[] = [];
   selectedRoom!: RoomList;
 
+  stream = new Observable((observer) => {
+    observer.next('user1');
+    observer.next('user2');
+    observer.next('user3');
+    observer.next('user4');
+    observer.complete(); // complte the stream
+    // observer.error('error');
+  });
+
   // @ViewChild(HeaderComponent, {static: true}) headerComponent!: HeaderComponent;
   // @ViewChild(HeaderComponent) headerComponent!: HeaderComponent; //recomended way
 
@@ -37,6 +47,15 @@ export class RoomsComponent {
   constructor(@SkipSelf() private roomsService: RoomsService) { }
 
   ngOnInit(): void {
+    this.stream.subscribe({
+      next: (value) => console.log(value),
+      complete: () => console.log('complete'),
+      error: (error) => console.log(error)
+    }
+    )
+    this.stream.subscribe((data) => {
+      console.log(data)
+    })
     this.roomsService.getRooms().subscribe((rooms) => {
       this.roomList = rooms;
     })
