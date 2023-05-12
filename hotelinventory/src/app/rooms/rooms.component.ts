@@ -37,7 +37,9 @@ export class RoomsComponent {
   constructor(@SkipSelf() private roomsService: RoomsService) { }
 
   ngOnInit(): void {
-    this.roomList = this.roomsService.getRooms();
+    this.roomsService.getRooms().subscribe((rooms) => {
+      this.roomList = rooms;
+    })
   }
 
   toggle() {
@@ -51,7 +53,7 @@ export class RoomsComponent {
 
   addRoom() {
     const room: RoomList = {
-      roomNumber: 104,
+      roomNumber: '104',
       roomType: 'Economy',
       amenities: ['TV'],
       price: 1000,
@@ -78,3 +80,10 @@ export class RoomsComponent {
 
 //do not implement ngOnChanges and ngDoCheck on same component
 // try to avoid ngDoCheck as much as possible
+
+// JS uses pull architechture i.e. 
+// getData -> addData -> getData
+
+// Angular uses push architechture i.e. (change detection)
+// getData -> continuous stream of data -> addData(RxJS)
+// the stream is pushing the latest data to the component
