@@ -113,6 +113,12 @@ export class RoomsComponent {
     })
   }
 
+  deleteRoom() {
+    this.roomsService.delete('3').subscribe((data) => {
+      this.roomList = data;
+    })
+  }
+
 }
 
 //do not implement ngOnChanges and ngDoCheck on same component
