@@ -18,12 +18,16 @@ export class RoomsService {
     // console.log(environment.apiEndpoint)
   }
 
-  roomList : RoomList[] = [];
+  roomList: RoomList[] = [];
 
   //Value provides makes object as a service like using apis
 
   getRooms() {
     return this.http.get<RoomList[]>('/api/rooms');
+  }
+
+  addRoom(room: RoomList) {
+    return this.http.post<RoomList[]>('/api/rooms', room);
   }
 
 }

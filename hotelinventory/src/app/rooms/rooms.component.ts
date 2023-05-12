@@ -81,7 +81,10 @@ export class RoomsComponent {
       checkoutTime: new Date('2020-01-01T12:00:00')
     }
     // this.roomList.push(room);
-    this.roomList = [...this.roomList, room];
+    // this.roomList = [...this.roomList, room];
+    this.roomsService.addRoom(room).subscribe((data) => {
+      this.roomList = data;
+    })
   }
 
   ngDoCheck() {
