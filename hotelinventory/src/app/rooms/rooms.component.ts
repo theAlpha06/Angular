@@ -24,7 +24,7 @@ export class RoomsComponent {
   roomList: RoomList[] = [];
   selectedRoom!: RoomList;
 
-  stream = new Observable((observer) => {
+  stream = new Observable<string>((observer) => {
     observer.next('user1');
     observer.next('user2');
     observer.next('user3');
