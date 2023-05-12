@@ -3,6 +3,7 @@ import { Room, RoomList } from './rooms';
 import { HeaderComponent } from '../header/header.component';
 import { RoomsService } from './services/rooms.service';
 import { Observable } from 'rxjs';
+import { HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'hotelinventory-rooms',
@@ -43,10 +44,33 @@ export class RoomsComponent {
   //this instance will not leak into the template or anywhere else but ts file
 
   //SkipSelf() will skip the current component and will look for the service in parent component although angular internally uses blurfilter to check where the services is used and it is pretty fast
-
+totalBytes = 0;
   constructor(@SkipSelf() private roomsService: RoomsService) { }
 
   ngOnInit(): void {
+
+    this.roomsService.getPhotos().subscribe((event) => {
+      switch (event.type) {
+        case HttpEventType.Sent: {
+          console.log('request sent');
+          break;
+        }
+        case HttpEventType.ResponseHeader: {
+          console.log('response header received');
+          break;
+        }
+        case HttpEventType.DownloadProgress: {
+          this.totalBytes += event.loaded;
+          console.log('download progress event', event.loaded);
+          break;
+        }
+        case HttpEventType.Response: {
+          console.log(event.body);
+          break;
+        }
+      }
+    })
+
     this.stream.subscribe({
       next: (value) => console.log(value),
       complete: () => console.log('complete'),
