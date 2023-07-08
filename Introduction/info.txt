@@ -21,3 +21,5 @@ Everything that return a string can be used in string interpolation {{this shoul
 
 [(ngModel)] it will trigger on the input event and update the value of serverName in our component and it will also update the value of the input element if we change serverName somewhere else. This is what two way binding.
 
+Unlike structural directives, attribute directives don't add or remove elments. They only change the element they were placed on.
+We use [] on ngStyle just to tell that we need to bind to certain property. So basically, we are binding to a property of the directive.
