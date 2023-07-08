@@ -16,3 +16,5 @@ Angular uses components to build web pages and use modules to basically bundle d
 Template has to be present, we can omit selectors and styles.
 
 We can use square brackets to select attributes, class even.
+
+Everything that return a string can be used in string interpolation {{this should be string or should result into an string}}
