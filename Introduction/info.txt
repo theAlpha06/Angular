@@ -1,0 +1,18 @@
+STARTUP Process
+
+index.html file is served and the scripts are injected and from there angular knows which files or components to show.
+The entry point of Angular is main.ts -> it bootstrap the appmodule -> which in turn says angular to load the appcomponent.
+
+Components
+
+We start our app from the root component i.e. AppComponent and then we nest other components.
+AppComponent is the root component which is bootstrap and all the other component will be add to app.component.html.
+
+Creating a component
+A component is simply a typescript class so that angular is able to instantiate it, to create objects based on the blue print we set in the ts file.
+
+Angular uses components to build web pages and use modules to basically bundle different pieces into packages.
+
+Template has to be present, we can omit selectors and styles.
+
+We can use square brackets to select attributes, class even.
