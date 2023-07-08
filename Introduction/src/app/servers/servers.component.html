@@ -19,4 +19,5 @@
 <ng-template #noServer>
   <p>{{ serverCreationStatus }}</p>
 </ng-template>
-<app-server></app-server>
+<hr />
+<app-server *ngFor="let server of servers; let i = index"></app-server>
