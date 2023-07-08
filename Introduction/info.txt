@@ -21,8 +21,3 @@ Everything that return a string can be used in string interpolation {{this shoul
 
 [(ngModel)] it will trigger on the input event and update the value of serverName in our component and it will also update the value of the input element if we change serverName somewhere else. This is what two way binding.
 
-Task:
-  - Add a input field which updates a property (username) via two-way binding
-  - Output the username property via String interpolation in a paragraph below the input
-  - Add a button which may only be clicked if the username in NOT an empty string
-  - Upon clicking the button, the username should be reset to an empty string
