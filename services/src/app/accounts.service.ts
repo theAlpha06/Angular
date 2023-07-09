@@ -1,6 +1,7 @@
 import { LoggingService } from "./logging/logging.service";
 import { Injectable } from '@angular/core';
 @Injectable()
+// We need to use @Injectable decorator if we are injecting any other service into a particular service. But it is not required to do the same if we are not injecting any other service into it. Although, it is recommended to add @Injectable decorator to all services.
 export class AccountsService  {
   accounts = [
     {
