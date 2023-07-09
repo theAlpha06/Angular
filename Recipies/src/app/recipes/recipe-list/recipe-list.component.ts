@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { outputAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,10 +8,15 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent {
+  @Output() selectedItem = new EventEmitter<Recipe>();
 
     recipes: Recipe[] = [
         new Recipe('A Test Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
         new Recipe('A  Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
         new Recipe('A Test', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
     ];
+
+    selectedRecipe (recipe: Recipe) {
+        this.selectedItem.emit(recipe);
+    }
 }
